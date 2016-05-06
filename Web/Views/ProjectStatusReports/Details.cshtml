@@ -1,0 +1,42 @@
+﻿@model Domain.ProjectStatusReport
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProjectStatusReport</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.ProjectId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.ProjectId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectStatusDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectStatusDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectStatusReportId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

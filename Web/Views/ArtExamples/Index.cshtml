@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Domain.ArtExample>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Picture.PictureUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArtExampleUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArtExampleComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArtExampleDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Picture.PictureUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtExampleUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtExampleComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtExampleDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArtExampleId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ArtExampleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArtExampleId })
+        </td>
+    </tr>
+}
+
+</table>

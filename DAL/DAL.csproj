@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB1DAF4C-CD99-4C53-B21E-D608F35B871B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommissionDbContext.cs" />
+    <Compile Include="Interfaces\IArtExampleRepository.cs" />
+    <Compile Include="Interfaces\IArtExampleTagRepository.cs" />
+    <Compile Include="Interfaces\IArtMessageRepository.cs" />
+    <Compile Include="Interfaces\ICreditCardInfoRepository.cs" />
+    <Compile Include="Interfaces\ICreditCardUserRepository.cs" />
+    <Compile Include="Interfaces\IEFRepository.cs" />
+    <Compile Include="Interfaces\IPictureRepository.cs" />
+    <Compile Include="Interfaces\IProjectRepository.cs" />
+    <Compile Include="Interfaces\IProjectStatusReportCommentRepository.cs" />
+    <Compile Include="Interfaces\IProjectStatusReportRepository.cs" />
+    <Compile Include="Interfaces\ITagRepository.cs" />
+    <Compile Include="Interfaces\ITagTypeRepository.cs" />
+    <Compile Include="Interfaces\IUserFeedbackRepository.cs" />
+    <Compile Include="Interfaces\IUserMessageRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\IUserTagRepository.cs" />
+    <Compile Include="Interfaces\IUserTypeRepository.cs" />
+    <Compile Include="Migrations\201605032014060_InitialMigration.cs" />
+    <Compile Include="Migrations\201605032014060_InitialMigration.Designer.cs">
+      <DependentUpon>201605032014060_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MigrationConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ArtExampleRepository.cs" />
+    <Compile Include="Repositories\ArtExampleTagRepository.cs" />
+    <Compile Include="Repositories\ArtMessageRepository.cs" />
+    <Compile Include="Repositories\CreditCardInfoRepository.cs" />
+    <Compile Include="Repositories\CreditCardUserRepository.cs" />
+    <Compile Include="Repositories\EFRepository.cs" />
+    <Compile Include="Repositories\PictureRepository.cs" />
+    <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="Repositories\ProjectStatusReportCommentRepository.cs" />
+    <Compile Include="Repositories\ProjectStatusReportRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\TagTypeRepository.cs" />
+    <Compile Include="Repositories\UserFeedbackRepository.cs" />
+    <Compile Include="Repositories\UserMessageRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\UserTagRepository.cs" />
+    <Compile Include="Repositories\UserTypeRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{fbe96d49-78c4-4c0d-b328-713c2eeb3627}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605032014060_InitialMigration.resx">
+      <DependentUpon>201605032014060_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

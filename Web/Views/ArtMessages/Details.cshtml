@@ -1,0 +1,50 @@
+﻿@model Domain.ArtMessage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ArtMessage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtExample.ArtExampleUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtExample.ArtExampleUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserMessage.UserMessageTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserMessage.UserMessageTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtMessageText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtMessageText)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ArtMessageId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

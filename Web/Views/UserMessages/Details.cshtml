@@ -1,0 +1,34 @@
+﻿@model Domain.UserMessage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserMessage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserMessageTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserMessageTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserMessageText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserMessageText)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserMessageId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
